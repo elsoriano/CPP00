@@ -1,42 +1,52 @@
 #include <iostream>
-#include <cctype>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    if (argc < 2)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return 0;
-    }
+	bool	space;
+	int		i;
+	int		j;
 
-    bool hasNonSpace = false;
-    for (int i = 1; i < argc && !hasNonSpace; ++i)
-    {
-        char *s = argv[i];
-        for (int j = 0; s[j] != '\0'; ++j)
-        {
-            if (!std::isspace(static_cast<unsigned char>(s[j])))
-            {
-                hasNonSpace = true;
-                break;
-            }
-        }
-    }
-
-    if (!hasNonSpace)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return 0;
-    }
-
-    for (int i = 1; i < argc; ++i)
-    {
-        char *s = argv[i];
-        for (int j = 0; s[j] != '\0'; ++j)
-            std::cout << static_cast<char>(std::toupper(static_cast<unsigned char>(s[j])));
-        if (i + 1 < argc)
-            std::cout << ' ';
-    }
-    std::cout << std::endl;
-    return 0;
+	space = true;
+	i = 1;
+	j = 0;
+	if (argc < 2)
+	{
+		std::cout << "LOUD AND UNBEARABLE NOISE" << "\n";
+		return (0);
+	}
+	while (i < argc && space)
+	{
+		while (argv[i][j])
+		{
+			if (!std::isspace(static_cast <unsigned char> (argv[i][j])))
+			{
+				space = false;
+				break;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	if (space)
+		std::cout << "LOUD AND UNBEARABLE NOISE" << "\n";
+	else
+	{
+		i = 1;
+		while (i < argc)
+		{
+			while (argv[i][j])
+			{
+				std::cout << static_cast <char> (std::toupper(static_cast <unsigned char> (argv[i][j])));
+				j++;
+			}
+			i++;
+			if (i < argc)
+				std::cout << " ";
+			else
+				std::cout << "\n";
+			j = 0;
+		}
+	}
+	return (0);
 }
