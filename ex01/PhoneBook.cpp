@@ -36,7 +36,7 @@ void PhoneBook::displayContacts() const
 	for (int i = 0; i < contact_count; i++)
 	{
 		std::cout << "|";
-		std::cout << std::setw(10) << contacts[i].getIndex() << "|";
+		std::cout << std::setw(10) << i << "|";
 		std::string first_name = contacts[i].getName();
 		if (first_name.length() > 10)
 			first_name = first_name.substr(0, 9) + ".";
