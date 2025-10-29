@@ -1,7 +1,7 @@
 # Makefile to build the megaphone program (C++98, 42-friendly)
 
-NAME = Megaphone
-SRCS = Megaphone.cpp
+NAME = PhoneBook
+SRCS = Main.cpp PhoneBook.cpp Contact.cpp
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
