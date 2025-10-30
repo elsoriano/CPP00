@@ -41,10 +41,8 @@ int	main(int argc, char **argv)
 				j++;
 			}
 			i++;
-			if (i < argc)
-				std::cout << " ";
-			else
-				std::cout << "\n";
+			if (i >= argc)
+				std::cout << std::endl;
 			j = 0;
 		}
 	}

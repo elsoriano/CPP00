@@ -3,7 +3,7 @@
 NAME = PhoneBook
 SRCS = Main.cpp PhoneBook.cpp Contact.cpp
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 .PHONY: all clean fclean re run
